@@ -4,6 +4,9 @@
 
 The user should be able to create a campaign where they will create and add custom NPCs.
 
+There should be buttons to access campaigns created and a form to a new campaign.
+Adding a new campaign should create a new table in the database, the name of the table should be the input from the form.
+
 ## Game
 
 The default campaign page should be like a portfolio grid showing the images and names of previously created characters for that game.

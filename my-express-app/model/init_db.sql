@@ -25,3 +25,16 @@ INSERT INTO npcs (firstname, lastname, age, race, class, gender, residence, desc
         'Vassleheim',
         'A driven, young man, born of bread-makers. Works for the city guard, and is honest to fault.',
         'Irish accent, secretly in love with boss, barely knows how to read.'); 
+
+INSERT INTO npcs (firstname, lastname, age, race, class, gender, residence, description, notes)  
+    VALUES (
+        "Baru",
+        "Cormorant",
+        32,
+        "air genasi",
+        "warlock",
+        "other",
+        "Neverwinter",
+        "Ruthless and stoic, has a toxic dependancy to their patron. Antagonistic, combative and dangerous.",
+        "They work for the thief guild, is trying to keep an eye on the players. Slight french accent."
+    }
