@@ -53,4 +53,9 @@ router.post("/mvp", async (req, res) => {
   getNPCs(req, res);
 })
 
+router.delete("/mvp/:id", async (req, res) => {
+  await db(`DELETE FROM npcs WHERE id = ${req.params.id}`);
+  getNPCs(req, res);
+})
+
 module.exports = router;
