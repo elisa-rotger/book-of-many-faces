@@ -28,5 +28,29 @@ router.get("/mvp/:id", (req, res) => {
     .catch(err => res.status(500).send({ error: err.message }));
 })
 
+router.post("/mvp", async (req, res) => {
+  await db(`INSERT INTO npcs (
+    firstname, 
+    lastname, 
+    age, 
+    race, 
+    class, 
+    gender, 
+    residence, 
+    description, 
+    notes)  
+  VALUES (
+    '${req.body.firstname}',
+    '${req.body.lastname}',
+    '${req.body.age}',
+    '${req.body.race}',
+    '${req.body.class}',
+    '${req.body.gender}',
+    '${req.body.residence}',
+    '${req.body.description}',
+    '${req.body.notes}'
+  )`);
+  getNPCs(req, res);
+})
 
 module.exports = router;
