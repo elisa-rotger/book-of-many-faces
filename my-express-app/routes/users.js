@@ -20,6 +20,13 @@ router.get("/mvp", (req, res) => {
   getNPCs(req, res);
 })
 
+router.get("/mvp/:id", (req, res) => {
+  db(`SELECT * FROM npcs WHERE id = ${req.params.id}`)
+    .then(results => {
+      res.send(results.data);
+    })
+    .catch(err => res.status(500).send({ error: err.message }));
+})
 
 
 module.exports = router;
