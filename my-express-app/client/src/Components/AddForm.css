@@ -1,0 +1,32 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: 100px 1fr max-content; */
+    margin: 0% 13% 0% 13%;
+    gap: 5%;
+}
+
+.container .item {
+    align-self: center;
+}
+
+input {
+    width: 70%;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+}
+
+#description {
+    grid-column: 3 / span 2;
+}
+
+#notes {
+    grid-column: 3 / span 2;
+}
+
+form button {
+    margin: 2%;
+}

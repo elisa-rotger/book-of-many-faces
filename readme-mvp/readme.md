@@ -23,10 +23,11 @@ Every NPC should have the following information:
 - First name, last name
 - Age
 - Race
+- Class
 - Gender
-- City
+- Residence
 - Description
-- DM notes
+- Notes
 
 ### Calls to API needed
 
