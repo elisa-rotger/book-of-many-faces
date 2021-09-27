@@ -32,8 +32,8 @@ export default function App() {
   return (
     <div className="App">
       NPC INDEX
-      {console.log(NPCS)}
       <AddForm onSubmit={newNpc => addNpc(newNpc)}/>
+      <Portfolio npcs={NPCS}/>
     </div>
   );
 }
