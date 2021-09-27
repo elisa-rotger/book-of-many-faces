@@ -1,0 +1,66 @@
+.wrap {
+    position: relative;
+    padding: 20px;
+}
+
+.tab-content {
+    position: relative;
+    display: block;
+    overflow-wrap: break-word;
+    padding: 20px;
+}
+
+/* Flexbox containing the portfolio list */
+
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 -5px;
+    padding: 0;
+}
+
+/* size & position of every tile */
+
+.tiles li.mod-tile {
+    width: 20%;
+    height: 250px;
+}
+
+.tiles > li {
+    display: block;
+    position: relative;
+    min-width: 0;
+    padding: 5px 10px 0px 10px;
+}
+
+/* image adjusting*/
+
+.mod-image {
+    width: 100%;
+    height: 80%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* content adjusting */
+
+.tile-content {
+    float: center;
+}
+
+.tile-content p {
+    height: 100%;
+}

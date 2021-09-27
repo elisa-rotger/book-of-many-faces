@@ -30,8 +30,8 @@ export default function App() {
   }
 
   return (
-    <div className="App">
-      NPC INDEX
+    <div className="wrapper" id="main-content">
+      <div>NPC INDEX</div>
       <AddForm onSubmit={newNpc => addNpc(newNpc)}/>
       <Portfolio npcs={NPCS}/>
     </div>
