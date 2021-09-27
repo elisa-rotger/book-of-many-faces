@@ -9,6 +9,7 @@ export default function Portfolio(props) {
             props.npcs.map(n => (
                 <li key={n.id}>
                     name: {n.firstname} {n.lastname}
+                    <img src={n.image} />
                 </li>
             ))}
         </ul>

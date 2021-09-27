@@ -12,7 +12,8 @@ export default function AddForm(props) {
         gender: "",
         residence: "",
         description: "",
-        notes: ""
+        notes: "",
+        image: ""
     }
 
     //setter for individual npcs
@@ -100,6 +101,13 @@ export default function AddForm(props) {
                             <option value="Male"> Male </option>
                             <option value="Other"> Other </option>
                         </select>
+                    </label> <br /> <br />
+                    <label>image <br />
+                        <input  
+                        type ="text"
+                        name="image"
+                        value={npc.image}
+                        onChange={handleChange} />
                     </label>
                 </div>
                 <label className="item" id="notes">notes <br />
