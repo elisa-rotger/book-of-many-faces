@@ -10,12 +10,23 @@ export default function App() {
   useEffect(() => {
     fetch("/users/mvp")
       .then(result => result.json())
-      .then(json => { setNPCS(json) })
+      .then(npcs => { setNPCS(npcs) })
       .catch(error => { setError(error.message) })
   }, [])
 
   const addNpc = (newNpc) => {
-    console.log(newNpc)
+    fetch("/users/mvp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newNpc)
+    })
+      .then(result => result.json())
+      .then(npcs => { 
+        setNPCS(npcs)
+      })
+      .catch(error => { setError(error.message) })
   }
 
   return (

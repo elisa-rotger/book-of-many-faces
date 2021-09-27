@@ -6,7 +6,7 @@ export default function AddForm(props) {
     const emptyNpc = {
         firstname: "",
         lastname: "",
-        age: null,
+        age: "",
         race: "",
         class: "",
         gender: "",
