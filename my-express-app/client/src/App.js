@@ -30,10 +30,16 @@ export default function App() {
   }
 
   return (
-    <div className="wrapper" id="main-content">
-      <div>NPC INDEX</div>
-      <AddForm onSubmit={newNpc => addNpc(newNpc)}/>
-      <Portfolio npcs={NPCS}/>
+    <div>
+      <div className="header-wrap"></div>
+      <div className="wrapper" id="main-content">
+        <div>
+          <h1>NPC INDEX</h1>
+        </div>
+        <div>{error ? error : ""}</div>
+        <AddForm onSubmit={newNpc => addNpc(newNpc)}/>
+        <Portfolio npcs={NPCS}/>
+      </div>
     </div>
   );
 }

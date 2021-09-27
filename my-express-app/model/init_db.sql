@@ -2,10 +2,10 @@ DROP TABLE IF EXISTS npcs;
  
 CREATE TABLE npcs ( 
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
-    firstname VARCHAR(20), 
+    firstname VARCHAR(20) NOT NULL, 
     lastname VARCHAR(20),
     age INT,
-    race VARCHAR(20),
+    race VARCHAR(20) NOT NULL,
     class VARCHAR(20),
     gender VARCHAR(20),
     residence VARCHAR(20),

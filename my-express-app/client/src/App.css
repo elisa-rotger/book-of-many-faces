@@ -1,12 +1,23 @@
 /* Wrapper & main content */
 
+.header-wrap {
+  position: relative;
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+}
+
 .wrapper {
   text-align: center;
   box-sizing: border-box;
-  max-width: 1290px;
-  padding: 0 20px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 11;
   display: block;
+  margin: 0 5%;
+  position: relative;
+}
+
+
+#main-content {
+  scroll-margin-top: 50px;
 }

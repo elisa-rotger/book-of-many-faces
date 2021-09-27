@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Portfolio.css";
 
 export default function Portfolio(props) {
@@ -11,7 +10,7 @@ export default function Portfolio(props) {
             props.npcs.map(n => (
                 <li key={n.id} className="mod-tile">
                     <div className="mod-image">
-                        <img src={n.image} />
+                        <img src={n.image} alt="description of the character"/>
                     </div>
                     <div className="tile-content">
                         <p>{n.firstname} {n.lastname}</p>
