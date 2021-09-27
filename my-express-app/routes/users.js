@@ -38,7 +38,8 @@ router.post("/mvp", async (req, res) => {
     gender, 
     residence, 
     description, 
-    notes)  
+    notes
+    )  
   VALUES (
     '${req.body.firstname}',
     '${req.body.lastname}',

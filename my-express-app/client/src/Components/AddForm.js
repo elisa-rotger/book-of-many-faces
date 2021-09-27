@@ -38,7 +38,7 @@ export default function AddForm(props) {
 
     return (
         <form>
-            <div className="container">
+            <div className="container" id="npc-form">
                 <div className="item">
                     <label> first name <br />
                         <input 

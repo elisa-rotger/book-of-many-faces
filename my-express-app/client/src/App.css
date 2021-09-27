@@ -2,11 +2,27 @@
 
 .header-wrap {
   position: relative;
-  display: block;
+  display: flex;
   top: 0;
   width: 100%;
   height: 50px;
   background-color: black;
+  justify-content: flex-end;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  margin-right: 11%;
+}
+
+.header-right button {
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  width: 100px;
+  margin-right: 10px;
 }
 
 .wrapper {

@@ -1,0 +1,11 @@
+/* buttons */
+#game-grid {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0;
+}
+
+#game-grid button {
+    margin: 1% 40%;
+    padding: 10px;
+}
