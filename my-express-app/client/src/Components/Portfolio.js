@@ -7,7 +7,7 @@ export default function Portfolio(props) {
         <div className="tab-content">
         <ul className="tiles">
             {props.npcs &&
-            props.npcs.map(n => (
+            props.npcs.filter(n => n.game_id == props.currentGame).map(n => (
                 <li key={n.id} className="mod-tile">
                     <div className="mod-image">
                         <img src={n.image} alt="description of the character"/>
