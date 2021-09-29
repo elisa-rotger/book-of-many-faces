@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
+import { Navbar, Nav, Container } from "react-bootstrap";
 import Portfolio from "./Components/Portfolio.js";
 import AddForm from "./Components/AddForm";
 import HomeGame from "./Components/HomeGame";
@@ -73,13 +74,24 @@ export default function App() {
 
   return (
     <div>
-      <div className="header-wrap">
-        <div className="header-right">
-          <form>
-            <button type="button" onClick={handleHome}>HOME</button>
-          </form>
-        </div>
-      </div>
+      <Navbar bg="dark" expand="lg" variant="dark">
+        <Container>
+          <Navbar.Brand onClick={handleHome}>
+            <img 
+            id="nav-logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Font_Awesome_5_solid_dice-d20.svg/512px-Font_Awesome_5_solid_dice-d20.svg.png"
+            className="d-inline-block align-top"
+            alt="d20 dice logo"
+            />
+            NPC INDEX</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link onClick={handleHome}>Home</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       <div className="wrapper" id="main-content">
         <div>
           <h1>NPC INDEX</h1>

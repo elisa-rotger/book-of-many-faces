@@ -1,5 +1,9 @@
 /* Container & item */
 
+.accordion span {
+    font-weight: bold;
+}
+
 #npc-form {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

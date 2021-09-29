@@ -39,9 +39,11 @@ export default function AddForm(props) {
     }
 
     return (
-        <Accordion defaultActiveKey="0" flush>
+        <Accordion flush className="accordion">
             <Accordion.Item eventKey="0">
-                <Accordion.Header>c reate new NPC</Accordion.Header>
+                <Accordion.Header>
+                    <span>create new NPC</span>
+                </Accordion.Header>
                 <Accordion.Body>
                     <form>
                         <div className="container" id="npc-form">
