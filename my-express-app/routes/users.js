@@ -28,7 +28,7 @@ router.get("/mvp/:id", (req, res) => {
     .catch(err => res.status(500).send({ error: err.message }));
 })
 
-router.post("/mvp", async (req, res) => {
+router.post("/mvp/", async (req, res) => {
   await db(`INSERT INTO npcs (
     firstname, 
     lastname, 
@@ -38,7 +38,9 @@ router.post("/mvp", async (req, res) => {
     gender, 
     residence, 
     description, 
-    notes
+    notes,
+    image,
+    game_id
     )  
   VALUES (
     '${req.body.firstname}',
@@ -49,7 +51,9 @@ router.post("/mvp", async (req, res) => {
     '${req.body.gender}',
     '${req.body.residence}',
     '${req.body.description}',
-    '${req.body.notes}'
+    '${req.body.notes}',
+    '${req.body.image}',
+    '${req.body.game_id}'
   )`);
   getNPCs(req, res);
 })

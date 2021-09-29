@@ -10,14 +10,19 @@ export default function HomeGame(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.onSubmit(game)
+        props.onSubmit(game);
         setGame("");
     }
+
+    const handleClick = (id) => {
+        props.onClick(id);
+    }
+
     return (
         <div>
             <div className="container" id="game-grid">
                 {props.games.map((g) => (
-                    <button key={g.id} type="button">{g.game}</button>
+                    <button key={g.id} type="button" onClick={() => handleClick(g.id)}>{g.game}</button>
                 ))}
             </div>
             <form>

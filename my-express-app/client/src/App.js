@@ -5,27 +5,29 @@ import AddForm from "./Components/AddForm";
 import HomeGame from "./Components/HomeGame";
 
 export default function App() {
-  const [home, setHome] = useState(false);
+  const [home, setHome] = useState(true);
+  const [games, setGames] = useState([]);
   const [NPCS, setNPCS] = useState([]);
   const [error, setError] = useState("");
-  const [games, setGames] = useState([]);
+  const [currentGame, setCurrentGame] = useState("");
 
   useEffect(() => {
     fetch("/users/mvp")
       .then(result => result.json())
       .then(npcs => { setNPCS(npcs) })
-      .catch(error => { setError(error.message) })
+      .catch(error => { setError(error.message); console.log(error) })
   }, [])
 
   useEffect(() => {
     fetch("/games/mvp")
       .then(result => result.json())
       .then(npcs => { setGames(npcs) })
-      .catch(error => { setError(error.message) })
+      .catch(error => { setError(error.message); console.log(error) })
   }, [])
 
   const handleHome = () => {
-    setHome(true)
+    setCurrentGame(null);
+    setHome(true);
   }
 
   const addGame = (newGame) => {
@@ -40,10 +42,11 @@ export default function App() {
       .then(games => {
         setGames(games)
       })
-      .catch(error => { setError(error.message) })
+      .catch(error => { setError(error.message); console.log(error) })
   }
 
   const addNpc = (newNpc) => {
+    console.log(newNpc);
     fetch("/users/mvp", {
       method: "POST",
       headers: {
@@ -55,7 +58,7 @@ export default function App() {
       .then(npcs => { 
         setNPCS(npcs)
       })
-      .catch(error => { setError(error.message) })
+      .catch(error => { setError(error.message); console.log(error) })
   }
 
   return (
@@ -72,11 +75,11 @@ export default function App() {
           <h1>NPC INDEX</h1>
         </div>
         <div>{error ? error : ""}</div>
-        {home 
-        ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games}/> 
-        :<div>
-          <AddForm onSubmit={newNpc => addNpc(newNpc)}/>
-          <Portfolio npcs={NPCS}/>
+        {home && !currentGame
+        ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)}/> 
+        : <div>
+          <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
+          <Portfolio npcs={NPCS} currentGame={currentGame}/>
         </div>}
 
       </div>

@@ -15,11 +15,11 @@ CREATE TABLE npcs (
     class VARCHAR(20),
     gender VARCHAR(20),
     residence VARCHAR(20),
-    description VARCHAR(200),
+    description VARCHAR(500),
     notes VARCHAR(200),
     image VARCHAR(200),
-    game_ID INT NOT NULL,
-    FOREIGN KEY (game_ID) references games(id)
+    game_id INT NOT NULL,
+    FOREIGN KEY (game_id) references games(id)
 ); 
 
 INSERT INTO games (game) VALUES ('Tanaia');
@@ -52,3 +52,17 @@ INSERT INTO npcs (firstname, lastname, age, race, class, gender, residence, desc
         "They work for the thief guild, is trying to keep an eye on the players. Slight french accent.",
         "https://i.pinimg.com/originals/ed/2a/63/ed2a63727bf63da1b4c6d2449282e9ac.png",
         '1');
+
+        INSERT INTO npcs (firstname, lastname, age, race, class, gender, residence, description, notes, image, game_ID)  
+    VALUES (
+        "Victoria",
+        "Valantine",
+        "19",
+        "faunus",
+        "dervish dancer",
+        "female",
+        "Beacon",
+        "Vivi is calm, cool and colected. Elegant and sarcastic, wants to leave the world better thank she found it. She wears a suit with a purple vest, has a long braid of blondish hair with both sides shaved, and has blue eyes.",
+        "She is always angry. At the injust world, her too permissive superiors and ignorant peers, even herself most of the time.",
+        "https://i.pinimg.com/originals/6b/eb/98/6beb9842c40c7f61090696da96afb7ac.png",
+        '2');

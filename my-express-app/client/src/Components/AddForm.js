@@ -13,7 +13,8 @@ export default function AddForm(props) {
         residence: "",
         description: "",
         notes: "",
-        image: ""
+        image: "",
+        game_id: `${props.currentGame}`
     }
 
     //setter for individual npcs
@@ -26,7 +27,7 @@ export default function AddForm(props) {
         //make copy w state - add those values
         setNpc((state) => ({
             ...state,
-            [name]: value
+            [name]: value,
         }))
     }
 
@@ -95,7 +96,7 @@ export default function AddForm(props) {
                 </div>
                 <div className="item">
                     <label>gender <br />
-                        <select name="gender" value={npc.gender} onChange={handleChange}>
+                        <select className="form-select" name="gender" value={npc.gender} onChange={handleChange}>
                             <option />
                             <option value="Female"> Female </option>
                             <option value="Male"> Male </option>
