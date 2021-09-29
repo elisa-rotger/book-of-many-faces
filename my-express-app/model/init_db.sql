@@ -19,7 +19,7 @@ CREATE TABLE npcs (
     notes VARCHAR(200),
     image VARCHAR(200),
     game_id INT NOT NULL,
-    FOREIGN KEY (game_id) references games(id)
+    FOREIGN KEY (game_id) references games(id) ON DELETE CASCADE
 ); 
 
 INSERT INTO games (game) VALUES ('Tanaia');

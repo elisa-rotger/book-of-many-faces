@@ -46,7 +46,6 @@ export default function App() {
   }
 
   const addNpc = (newNpc) => {
-    console.log(newNpc);
     fetch("/users/mvp", {
       method: "POST",
       headers: {
@@ -62,7 +61,14 @@ export default function App() {
   }
 
   const deleteGame = (id) => {
-    
+    fetch(`games/mvp/${id}`, {
+      method: "DELETE"
+    })
+    .then(result => result.json())
+    .then(games => { 
+      setGames(games)
+    })
+    .catch(error => { setError(error.message); console.log(error) })
   }
 
   return (
