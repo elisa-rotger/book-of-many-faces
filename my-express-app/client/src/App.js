@@ -61,6 +61,10 @@ export default function App() {
       .catch(error => { setError(error.message); console.log(error) })
   }
 
+  const deleteGame = (id) => {
+    
+  }
+
   return (
     <div>
       <div className="header-wrap">
@@ -76,7 +80,7 @@ export default function App() {
         </div>
         <div>{error ? error : ""}</div>
         {home && !currentGame
-        ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)}/> 
+        ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)} onDelete={id => deleteGame(id)} /> 
         : <div>
           <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
           <Portfolio npcs={NPCS} currentGame={currentGame}/>

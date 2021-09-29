@@ -18,11 +18,24 @@ export default function HomeGame(props) {
         props.onClick(id);
     }
 
+    const handleDelete = (id) => {
+        props.onDelete(id);
+    }
+
     return (
         <div>
             <div className="container" id="game-grid">
                 {props.games.map((g) => (
-                    <button key={g.id} type="button" onClick={() => handleClick(g.id)}>{g.game}</button>
+                    <div className="game-btn">
+                        <div id="filler" />
+                        <button id="game" key={g.id} type="button" onClick={() => handleClick(g.id)}>{g.game}</button>
+                        <div className="dropdown">
+                            <button className="dropbtn" key={g.id}>options</button>
+                            <div className="dropdown-content">
+                                <a onClick={() => handleDelete(g.id)} >delete</a>
+                            </div>
+                        </div>
+                    </div>
                 ))}
             </div>
             <form id="game-form">

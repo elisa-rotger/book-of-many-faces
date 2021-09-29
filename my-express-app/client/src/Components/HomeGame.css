@@ -1,16 +1,68 @@
 /* buttons */
+* {
+    box-sizing: border-box;
+}
+
 #game-grid {
     display: flex;
     flex-direction: column;
     margin-top: 5%;
     margin-bottom: 2%;
+    gap: 15px;
+}
+
+.game-btn {
+    display: flex;
+    gap: 5px;
+    justify-content: space-evenly;
+}
+
+#filler {
+    width: 10%;
 }
 
 #game-grid button {
-    margin: 1% 40%;
-    padding: 10px;
     border-radius: 5px;
 }
+
+#game-grid #game {
+    padding: 10px;
+    width: 20%;
+}
+
+/* dropdown menu buttons*/
+
+.dropdown {
+    width: 10%;
+}
+
+.dropbtn {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 140px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 8px;
+    display: block; 
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(250, 107, 107);
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #10111028;}   
 
 #game-form input {
     width: 20%;
