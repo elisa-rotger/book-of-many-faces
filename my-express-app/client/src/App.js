@@ -36,13 +36,13 @@ export default function App() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ newGame })
+      body: JSON.stringify({ game: newGame })
     })
       .then(result => result.json())
       .then(games => {
         setGames(games)
       })
-      .catch(error => { setError(error.message); console.log(error) })
+      .catch(error => { setError(error.message) })
   }
 
   const addNpc = (newNpc) => {

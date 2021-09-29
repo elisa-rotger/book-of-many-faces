@@ -25,9 +25,9 @@ export default function HomeGame(props) {
                     <button key={g.id} type="button" onClick={() => handleClick(g.id)}>{g.game}</button>
                 ))}
             </div>
-            <form>
-                create a campaign
-                <input type="text" name="game" value={game} onChange={handleChange}></input>
+            <form id="game-form">
+                <h4>create new campaign</h4>
+                <input type="text" name="game" value={game} onChange={handleChange}></input> <br />
                 <button type="button" onClick={handleSubmit}>new game</button>
             </form>
         </div>
