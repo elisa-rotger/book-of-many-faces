@@ -83,7 +83,8 @@ export default function App() {
             className="d-inline-block align-top"
             alt="d20 dice logo"
             />
-            NPC INDEX</Navbar.Brand>
+            <span id="nav-title">NPC INDEX</span>
+            </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

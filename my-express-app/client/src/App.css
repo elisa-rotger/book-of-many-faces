@@ -7,6 +7,10 @@
   margin-right: 10px;
 }
 
+#nav-title {
+  cursor: pointer;
+}
+
 .wrapper {
   text-align: center;
   box-sizing: border-box;
