@@ -62,7 +62,7 @@ export default function App() {
   }
 
   const deleteGame = (id) => {
-    fetch(`games/mvp/${id}`, {
+    fetch(`/games/mvp/${id}`, {
       method: "DELETE"
     })
     .then(result => result.json())

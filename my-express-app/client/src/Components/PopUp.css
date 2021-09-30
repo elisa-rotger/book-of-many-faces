@@ -21,6 +21,33 @@
     border: 1px solid #999;
     overflow: auto;
   }
+
+  .box img {
+      width: 25em;
+      height: 25em;
+      border-radius: 10px;
+      border: 2px solid black;
+      cursor: auto;
+  }
+
+  .box-content {
+      display: flex;
+      gap: 4%;
+  }
+
+  .info {
+      display: grid;
+      text-align: left;
+      padding-top: 10px;
+  }
+
+  .info #name {
+      font-weight: bold;
+  }
+
+  .info #dm {
+      font-style: italic;
+  }
   
   .close-icon {
     content: 'x';
