@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+/* .home-box {
+
+    
+} */
+
 #game-grid {
     display: flex;
     flex-direction: column;
@@ -14,11 +19,11 @@
 .game-btn {
     display: flex;
     gap: 5px;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 #filler {
-    width: 10%;
+    width: 2,5%;
 }
 
 #game-grid button {
@@ -33,7 +38,7 @@
 /* dropdown menu buttons*/
 
 .dropdown {
-    width: 10%;
+    width: 2,5%;
 }
 
 .dropbtn {
@@ -46,13 +51,15 @@
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 140px;
+    min-width: 100px;
     z-index: 1;
 }
 
 .dropdown-content a {
-    padding: 8px;
+    padding: 5px;
     display: block; 
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .dropdown-content a:hover {

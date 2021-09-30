@@ -1,10 +1,14 @@
+* {
+  font-family: "Lucida Console", "Lucida Sansa Typewriter", "monaco", "Bitstream Vera Sans Mono", monospace;  
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url(
+    "https://www.wallpaperup.com/uploads/wallpapers/2015/10/20/821168/08950bf03a5fb1fc72c34c0b0b236da5.jpg"
+  ); */
 }
 
 code {
