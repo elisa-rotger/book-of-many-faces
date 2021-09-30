@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import PopUp from "./PopUp";
 import "./Portfolio.css";
 
 export default function Portfolio(props) {
     const [search, setSearch] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
+    const [currentID, setCurrentID] = useState(null);
 
     const filterNPCS = (npcs, search) => {
         if(!search) { return npcs }
@@ -18,6 +21,10 @@ export default function Portfolio(props) {
         setSearch(event.target.value)
     }
 
+    const togglePopUp = () => {
+        setIsOpen(!isOpen);
+    }
+
     return (
     <div className="wrap">
         <div className="search-bar">
@@ -29,12 +36,13 @@ export default function Portfolio(props) {
             onChange={handleChange} />
         </div>
         <div className="tab-content">
+        
         <ul className="tiles">
             {props.npcs &&
             filteredNPCS.filter(n => n.game_id === props.currentGame).map(n => (
                 <li key={n.id} className="mod-tile">
                     <div className="mod-image">
-                        <img src={n.image} alt="description of the character"/>
+                        <img src={n.image} alt="description of the character" onClick={togglePopUp}/>
                     </div>
                     <div className="tile-content">
                         <p>{n.firstname} {n.lastname}</p>
@@ -42,6 +50,7 @@ export default function Portfolio(props) {
                 </li>
             ))}
         </ul>
+        {isOpen && <PopUp handleClose={togglePopUp} />}
         </div>
     </div>
     )
