@@ -47,6 +47,15 @@ export default function Portfolio(props) {
             {props.npcs &&
             filteredNPCS.filter(n => n.game_id === props.currentGame).map(n => (
                 <li key={n.id} className="mod-tile">
+                    <div className="dropdown" id="droptile">
+                        <button className="dropbtn" type="button" id="tile-btn"> + </button>
+                        <div className="dropdown-content" id="drop-content">
+                            {/* TODO */}
+                            <a>Favourite</a>
+                            <a>Delete</a>
+                            <a>Send to...</a>
+                        </div>
+                    </div>
                     <div className="mod-image">
                         <img src={n.image} alt="description of the character" onClick={() => openPopup(n.id)}/>
                     </div>
