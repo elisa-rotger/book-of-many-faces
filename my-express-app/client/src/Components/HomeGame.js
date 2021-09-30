@@ -26,13 +26,13 @@ export default function HomeGame(props) {
         <div className="home-box">
             <div className="container" id="game-grid">
                 {props.games.map((g) => (
-                    <div className="game-btn">
+                    <div className="game-btn" key={g.id}>
                         <div id="filler" />
                         <button id="game" key={g.id} type="button" onClick={() => handleClick(g.id)}>{g.game}</button>
                         
                         <div className="dropdown">
                             <button className="dropbtn" key={g.id}>
-                                <i class="gg-menu"></i>
+                                <i className="gg-menu"></i>
                             </button>
                             <div className="dropdown-content">
                                 <a onClick={() => handleDelete(g.id)} >delete</a>

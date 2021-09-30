@@ -98,12 +98,14 @@ export default function App() {
           <h1>NPC INDEX</h1>
         </div>
         <div>{error ? error : ""}</div>
-        {home && !currentGame
-        ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)} onDelete={id => deleteGame(id)} /> 
-        : <div>
-          <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
-          <Portfolio npcs={NPCS} currentGame={currentGame}/>
-        </div>}
+        <div className="wrapper" id="second-content">
+          {home && !currentGame
+          ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)} onDelete={id => deleteGame(id)} /> 
+          : <div>
+            <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
+            <Portfolio npcs={NPCS} currentGame={currentGame}/>
+          </div>}
+        </div>
 
       </div>
     </div>

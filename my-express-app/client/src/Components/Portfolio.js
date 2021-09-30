@@ -3,7 +3,11 @@ import "./Portfolio.css";
 export default function Portfolio(props) {
     return (
     <div className="wrap">
-        <div>title</div>
+        <div className="search-bar">
+            <span>search:</span>
+            {/* TODO */}
+            <input />
+        </div>
         <div className="tab-content">
         <ul className="tiles">
             {props.npcs &&

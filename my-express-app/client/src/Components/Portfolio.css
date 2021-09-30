@@ -3,6 +3,21 @@
     padding: 20px;
 }
 
+.search-bar{
+    display: fleX;
+    justify-content: flex-end;
+    align-content: center;
+    margin: 0 3%;
+}
+
+.search-bar span {
+    padding-top: 2px;
+}
+
+.search-bar input {
+    width: 20%;
+}
+
 .tab-content {
     position: relative;
     display: block;

@@ -19,7 +19,15 @@
   position: relative;
 }
 
-
 #main-content {
   scroll-margin-top: 50px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 5em;
+}
+
+#second-content {
+  border: solid 3px black;
 }
