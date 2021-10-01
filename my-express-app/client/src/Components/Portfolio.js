@@ -21,6 +21,10 @@ export default function Portfolio(props) {
         setSearch(event.target.value);
     }
 
+    const handleDelete = (id) => {
+        props.onDelete(id);
+    }
+
     const openPopup = (id) => {
         setIsOpen(true);
         const index = props.npcs.findIndex(n => n.id == id)
@@ -52,7 +56,7 @@ export default function Portfolio(props) {
                         <div className="dropdown-content" id="drop-content">
                             {/* TODO */}
                             <a>Favourite</a>
-                            <a>Delete</a>
+                            <a onClick={() => handleDelete(n.id)}>Delete</a>
                             <a>Send to...</a>
                         </div>
                     </div>

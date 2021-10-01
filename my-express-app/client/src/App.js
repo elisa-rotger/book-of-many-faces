@@ -61,6 +61,15 @@ export default function App() {
       .catch(error => { setError(error.message); console.log(error) })
   }
 
+  const deleteNPC = (id) => {
+    fetch(`/users/mvp/${id}`, {
+      method: "DELETE"
+    })
+    .then(result => result.json())
+    .then(npcs => { setNPCS(npcs) })
+    .catch(error => { setError(error.message); console.log(error) })
+  }
+
   const deleteGame = (id) => {
     fetch(`/games/mvp/${id}`, {
       method: "DELETE"
@@ -103,7 +112,7 @@ export default function App() {
           ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)} onDelete={id => deleteGame(id)} /> 
           : <div>
             <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
-            <Portfolio npcs={NPCS} currentGame={currentGame}/>
+            <Portfolio npcs={NPCS} currentGame={currentGame} onDelete={id => deleteNPC(id)}/>
           </div>}
         </div>
 
