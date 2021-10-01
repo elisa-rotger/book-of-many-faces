@@ -63,4 +63,20 @@ router.delete("/mvp/:id", async (req, res) => {
   getNPCs(req, res);
 })
 
+router.put("/mvp/:id", async (req, res) => {
+  await  db(`UPDATE npcs SET
+    firstname = '${req.body.firstname}',
+    lastname = '${req.body.lastname}',
+    age = '${req.body.age}',
+    race = '${req.body.race}',
+    class = '${req.body.class}',
+    gender = '${req.body.gender}',
+    residence = '${req.body.residence}',
+    description = '${req.body.description}',
+    notes = '${req.body.notes}',
+    image = '${req.body.image}'
+    WHERE id = ${req.params.id}`);
+  getNPCs(req, res);
+})
+
 module.exports = router;
