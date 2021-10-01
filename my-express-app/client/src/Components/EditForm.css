@@ -1,0 +1,48 @@
+.edit-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:  space-between;
+    padding: 5px;
+    align-content: space-around;
+}
+
+.edit-form label {
+    width: 30%;
+    padding: 5px;
+}
+
+.edit-form select {
+    width: 100%;
+}
+
+.edit-form span {
+    float: left;
+    font-weight: bold;
+}
+
+#up-description, #up-notes, #up-image {
+    flex-grow: 3;
+}
+
+#up-image {
+    width: 50%;
+}
+
+#up-image input{
+    width: 100%;
+}
+
+#up-description, #up-notes {
+    width: 40%;
+}
+
+.edit-form textarea {
+    width: 100%;    
+}
+
+.edit-form button {
+    border: none;
+    width: 18%;
+    height: 2em;
+    margin: 10px 41%;
+}

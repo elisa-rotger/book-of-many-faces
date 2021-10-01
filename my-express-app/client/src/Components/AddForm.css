@@ -11,12 +11,12 @@
     gap: 5%;
 }
 
-.container .item {
+.item {
     align-self: center;
 }
 
 input {
-    width: 70%;
+    width: 100%;
 }
 
 textarea {

@@ -13,6 +13,10 @@ export default function App() {
   const [currentGame, setCurrentGame] = useState("");
 
   useEffect(() => {
+    document.title = "NPC index"
+  }, []);
+
+  useEffect(() => {
     fetch("/users/mvp")
       .then(result => result.json())
       .then(npcs => { setNPCS(npcs) })
@@ -81,6 +85,19 @@ export default function App() {
     .catch(error => { setError(error.message); console.log(error) })
   }
 
+  const updateNPC = (updatedNPC) => {
+    fetch(`/users/mvp/${updatedNPC.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(updatedNPC)
+    })
+    .then(result => result.json())
+    .then(npcs => { setNPCS(npcs) })
+    .catch(error => { setError(error.message); console.log(error) })
+  }
+
   return (
     <div>
       <Navbar bg="dark" expand="lg" variant="dark">
@@ -112,7 +129,7 @@ export default function App() {
           ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)} onDelete={id => deleteGame(id)} /> 
           : <div>
             <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
-            <Portfolio npcs={NPCS} currentGame={currentGame} onDelete={id => deleteNPC(id)}/>
+            <Portfolio npcs={NPCS} currentGame={currentGame} onDelete={id => deleteNPC(id)} updateNPC={(updatedNPC) => updateNPC(updatedNPC)} />
           </div>}
         </div>
 

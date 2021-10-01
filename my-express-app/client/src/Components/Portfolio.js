@@ -35,6 +35,10 @@ export default function Portfolio(props) {
         setIsOpen(false);
     }
 
+    const updateNPC = (updatedNPC) => {
+        props.updateNPC(updatedNPC);
+    }
+
     return (
     <div className="wrap">
         <div className="search-bar">
@@ -69,7 +73,7 @@ export default function Portfolio(props) {
                 </li>
             ))}
         </ul>
-        {isOpen && <PopUp handleClose={closePopup} npc={featured} />}
+        {isOpen && <PopUp handleClose={closePopup} npc={featured} updateNPC={(updatedNPC) => updateNPC(updatedNPC)} />}
         </div>
     </div>
     )
