@@ -53,7 +53,10 @@ export default function HomeGame(props) {
                         <input type="text" className="form-control" id="colFormLabel" placeholder="new game" name="game" value={game} onChange={handleChange}></input> <br />
                     </div>
                 </div>
-            <button type="button" className="btn btn-dark" onClick={handleSubmit}>new game</button>
+            <button type="button" className="add-game btn btn-dark" onClick={handleSubmit}>
+                <a>new game</a>
+                <i class="gg-add-r"></i>
+            </button>
             </form>
         </div>
     )

@@ -1,15 +1,16 @@
 /* Main content */
 
 .home-box {
-    margin: 0 10em;
+    margin: 0 5em;
     background-color: #6560a0;
+    padding-bottom: 5em;
 }
 
 /* Games title */
 .games-title {
     padding: 3% 0;
     border-bottom: 2px solid black;
-    background-color: #212529   ;
+    background-color: #798478   ;
 }
 
 .games-title h3 {
@@ -50,7 +51,7 @@
 
 #game-grid #game {
     padding: 10px;
-    width: 20%;
+    width: 30%;
     border: 2px solid black;
 }
 
@@ -94,7 +95,7 @@
 /* Form */
 
 #game-form {
-    margin: 3em 5em 1em 5em;
+    margin: 3em 5em 3em 5em;
     align-items: center;
 }
 
@@ -107,22 +108,11 @@
     align-items: center;
 }
 
-/* Footer */
-
-footer {
-    background-color: #212529;
-    height: 5em;
-    border-top: 1px solid white;
+button.add-game {
+    width: 9em;
     display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-footer span {
-    color: white;
-    font-size: 1em;
-}
-
-footer .content {
-    width: 30%;
-    margin-left: 2em;   
+    gap: 5px;
+    margin-left: 28em;
 }

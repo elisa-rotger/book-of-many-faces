@@ -1,6 +1,7 @@
 .wrap {
     position: relative;
     padding: 20px;
+    background-color: #cfcabf;
 }
 
 .search-bar{
@@ -8,6 +9,18 @@
     justify-content: flex-end;
     align-content: center;
     margin: 0 3%;
+    gap: 10px;
+}
+
+.search-bar .folder {
+    width: 100%;
+    text-align: left;
+}
+
+.folder button {
+    background-color: #cfcabf;
+    border: none;
+    padding: 0 0 0 0.5em;
 }
 
 .search-bar span {

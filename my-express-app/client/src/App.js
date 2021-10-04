@@ -121,8 +121,8 @@ export default function App() {
       </Navbar>
       <div className="wrapper" id="main-content">
         <div className="title">
-          <div>
-            <h1>BOOK OF</h1> <div className="title-gap"></div> <h1 className="special-title">MANY FACES</h1>
+          <div className="title-content">
+            <h1>BOOK OF</h1><div className="title-gap"></div> <h1 className="special-title">MANY FACES</h1>
           </div>
         </div>
         <div>{error ? error : ""}</div>
@@ -130,8 +130,10 @@ export default function App() {
           {home && !currentGame
           ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)} onDelete={id => deleteGame(id)} /> 
           : <div>
-            <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
-            <Portfolio npcs={NPCS} currentGame={currentGame} onDelete={id => deleteNPC(id)} updateNPC={(updatedNPC) => updateNPC(updatedNPC)} />
+            <div className="port-content">
+              <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
+              <Portfolio npcs={NPCS} currentGame={currentGame} onDelete={id => deleteNPC(id)} updateNPC={(updatedNPC) => updateNPC(updatedNPC)} />
+            </div>
           </div>}
         </div>
 

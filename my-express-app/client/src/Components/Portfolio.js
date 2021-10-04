@@ -43,6 +43,12 @@ export default function Portfolio(props) {
     return (
     <div className="wrap">
         <div className="search-bar">
+            <span className="folder">create folder
+                {/* TODO */}
+                <button type="button" className="btn">
+                    <i class="gg-folder-add"></i>
+                </button>
+            </span>
             <span>search:</span>
             <input
             type="text"
