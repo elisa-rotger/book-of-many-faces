@@ -37,6 +37,7 @@ export default function Portfolio(props) {
 
     const updateNPC = (updatedNPC) => {
         props.updateNPC(updatedNPC);
+        setFeatured(updatedNPC);
     }
 
     return (
@@ -61,6 +62,7 @@ export default function Portfolio(props) {
                             {/* TODO */}
                             <a>Favourite</a>
                             <a onClick={() => handleDelete(n.id)}>Delete</a>
+                            <a>Kill</a>
                             <a>Send to...</a>
                         </div>
                     </div>
