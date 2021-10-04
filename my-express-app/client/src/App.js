@@ -13,7 +13,7 @@ export default function App() {
   const [currentGame, setCurrentGame] = useState("");
 
   useEffect(() => {
-    document.title = "NPC index"
+    document.title = "BMF"
   }, []);
 
   useEffect(() => {
@@ -109,7 +109,7 @@ export default function App() {
             className="d-inline-block align-top"
             alt="d20 dice logo"
             />
-            <span id="nav-title">NPC INDEX</span>
+            <span id="nav-title">BMF</span>
             </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -120,8 +120,10 @@ export default function App() {
         </Container>
       </Navbar>
       <div className="wrapper" id="main-content">
-        <div>
-          <h1>NPC INDEX</h1>
+        <div className="title">
+          <div>
+            <h1>BOOK OF</h1> <div className="title-gap"></div> <h1 className="special-title">MANY FACES</h1>
+          </div>
         </div>
         <div>{error ? error : ""}</div>
         <div className="wrapper" id="second-content">
@@ -134,6 +136,17 @@ export default function App() {
         </div>
 
       </div>
+      <footer>
+        <section className="content">
+          <div className="logo">
+            <img 
+            id="nav-logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Font_Awesome_5_solid_dice-d20.svg/512px-Font_Awesome_5_solid_dice-d20.svg.png"
+            alt="d20 dice logo"
+            /> <span>BOOK OF MANY FACES</span>
+          </div>
+        </section>
+      </footer>
     </div>
   );
 }

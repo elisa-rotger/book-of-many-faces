@@ -15,7 +15,7 @@
   text-align: center;
   box-sizing: border-box;
   display: block;
-  margin: 0 5% 5% 5%;
+  margin: 0 5%;
   position: relative;
 }
 
@@ -23,11 +23,40 @@
   scroll-margin-top: 50px;
 }
 
-h1 {
-  font-weight: bold;
-  font-size: 5em;
+/* Title */
+
+.title {
+  padding: 3em 0;
+  margin: 0 5%;
+  background-color: #bdbdab;
+  border-left: 5px solid #332e66;
+  border-right: 5px solid #332e66;
 }
 
+.title h1 {
+  font-size: 4em;
+  font-style: normal; 
+  font-variant: normal; 
+  display: inline-block;
+}
+
+.title-gap {
+  width: 1em;
+  display: inline-block 
+}
+
+.special-title {
+  font-family: Impact, Haettenschweiler, Franklin Gothic Bold, Charcoal, Helvetica Inserat, Bitstream Vera Sans Bold, Arial Black, sans serif;
+  font-weight: 500;
+  line-height: 26.4px; 
+}
+
+/* Page content */
+
 #second-content {
-  border: solid 3px black;
+  /* border: 5px ridge black; */
+  background-color: #cfcabf;
+  border: 5px solid #332e66;
+  border-top: 2px solid #332e66;
+  border-bottom: 2px solid #332e66;
 }

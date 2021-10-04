@@ -24,27 +24,36 @@ export default function HomeGame(props) {
 
     return (
         <div className="home-box">
+            <div className="games-title">            
+                <h3>Choose your game</h3>
+            </div>
             <div className="container" id="game-grid">
                 {props.games.map((g) => (
                     <div className="game-btn" key={g.id}>
                         <div id="filler" />
-                        <button id="game" key={g.id} type="button" onClick={() => handleClick(g.id)}>{g.game}</button>
+                        <button className="btn btn-outline-dark" id="game" key={g.id} type="button" onClick={() => handleClick(g.id)}>{g.game}</button>
                         
                         <div className="dropdown">
-                            <button className="dropbtn" key={g.id}>
+                            <button className="dropbtn btn btn-outline-dark" key={g.id}>
                                 <i className="gg-menu"></i>
                             </button>
                             <div className="dropdown-content">
-                                <a onClick={() => handleDelete(g.id)} >delete</a>
+                                {/* TODO */}
+                                <a>edit</a>
+                                <a className="btn btn-outline-danger" onClick={() => handleDelete(g.id)} >delete</a>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-            <form id="game-form">
-                <h4>create new campaign</h4>
-                <input type="text" name="game" value={game} onChange={handleChange}></input> <br />
-                <button type="button" onClick={handleSubmit}>new game</button>
+            <form>
+                <div className="row mb-3" id="game-form">
+                    <label htmlFor="colFormLabel" className="col-sm-2 col-form-label">create new campaign</label>
+                    <div class="col-sm-10">
+                        <input type="text" className="form-control" id="colFormLabel" placeholder="new game" name="game" value={game} onChange={handleChange}></input> <br />
+                    </div>
+                </div>
+            <button type="button" className="btn btn-dark" onClick={handleSubmit}>new game</button>
             </form>
         </div>
     )

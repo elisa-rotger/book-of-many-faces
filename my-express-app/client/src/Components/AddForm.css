@@ -11,6 +11,11 @@
     gap: 5%;
 }
 
+.accordion-header, .accordion-button, .accordion-body {
+    background-color: #cfcabf;
+    border-bottom: 1px solid black
+}
+
 .item {
     align-self: center;
 }

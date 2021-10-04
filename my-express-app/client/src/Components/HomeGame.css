@@ -1,12 +1,29 @@
-/* buttons */
+/* Main content */
+
+.home-box {
+    margin: 0 10em;
+    background-color: #6560a0;
+}
+
+/* Games title */
+.games-title {
+    padding: 3% 0;
+    border-bottom: 2px solid black;
+    background-color: #212529   ;
+}
+
+.games-title h3 {
+    font-weight: bold;
+    font-size: 2em;
+    color: white
+}
+
+
+/* Buttons */
+
 * {
     box-sizing: border-box;
 }
-
-/* .home-box {
-
-    
-} */
 
 #game-grid {
     display: flex;
@@ -28,11 +45,13 @@
 
 #game-grid button {
     border-radius: 5px;
+    text-transform: uppercase;
 }
 
 #game-grid #game {
     padding: 10px;
     width: 20%;
+    border: 2px solid black;
 }
 
 /* dropdown menu buttons*/
@@ -50,9 +69,10 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
     min-width: 100px;
     z-index: 1;
+    background-color: #6560a0;
+    color: black
 }
 
 .dropdown-content a {
@@ -71,6 +91,38 @@
 
 .dropdown:hover .dropbtn {background-color: #10111028;}   
 
-#game-form input {
-    width: 20%;
+/* Form */
+
+#game-form {
+    margin: 3em 5em 1em 5em;
+    align-items: center;
+}
+
+#game-form label {
+    font-weight: bold;
+}
+
+.col-sm-10 {
+    display: flex;
+    align-items: center;
+}
+
+/* Footer */
+
+footer {
+    background-color: #212529;
+    height: 5em;
+    border-top: 1px solid white;
+    display: flex;
+    align-items: center;
+}
+
+footer span {
+    color: white;
+    font-size: 1em;
+}
+
+footer .content {
+    width: 30%;
+    margin-left: 2em;   
 }

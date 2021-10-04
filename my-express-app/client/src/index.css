@@ -6,9 +6,9 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url(
-    "https://www.wallpaperup.com/uploads/wallpapers/2015/10/20/821168/08950bf03a5fb1fc72c34c0b0b236da5.jpg"
-  ); */
+  background-image: url(
+    "https://s3-eu-west-1.amazonaws.com/images.geeknative.com/wp-content/uploads/2014/08/Elven_City_-_Players_Handbook_jpg_jpgcopy.jpg"
+  );
 }
 
 code {
