@@ -1,5 +1,9 @@
 /* Wrapper & main content */
 
+.nav-bar {
+  border-bottom: 1px solid white;
+}
+
 #nav-logo {
   height: 30px;
   width: 30px;

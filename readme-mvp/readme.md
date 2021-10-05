@@ -7,13 +7,23 @@ The user should be able to create a campaign where they will create and add cust
 There should be buttons to access campaigns created and a form to a new campaign.
 Adding a new campaign should create a new table in the database, the name of the table should be the input from the form.
 
+Each game button should also have the EDIT and DELETE options.
+
 ## Game
 
 The default campaign page should be like a portfolio grid showing the images and names of previously created characters for that game.
 
 At the top, there should be a button that toggles the showing of the form, on top of the first images of the grid, with the inputs necessary to create a new NPC.
 
-When clicking on an NPC, it should show & toggle their full information right below their line on the grid - like a featured img but with flexible display? god help me with css
+Over the portfolio, there should be a search bar (filters by name), a create new folder function and a filter function.
+
+When clicking on an NPC, it should show & toggle their full information on a popup window. In this window, there should be an EDIT button/function.
+
+On every image, there should be various buttons for each npc: 
+- DELETE: remove that npc from database
+- FAVOURITE: marks that npc visually and moves it at the top of the page
+- KILL: marks that npc as dead (cross, red overlay, etc)
+- MOVE TO: move that npc to created folders
 
 ### Information on NPCs
 
@@ -31,22 +41,18 @@ Every NPC should have the following information:
 
 ### Calls to API needed
 
-- GET: both general & by ID
-- POST: adding new npcs to db
-- DELETE: deleting an NPC by ID
+- GET: both (npcs and games) general & by ID
+- POST: adding NPC to npcs table, adding GAME to games table
+- DELETE: deleting an NPC by ID, deleting GAME by ID (also cascading and deleting NPCS    with their gameID)
+- PUT: edit NPC by ID, edit GAME by ID
 
-### Optional features to add
+### TODO features
 
-An option to delete a whole campaign from the main menu.
-
-A query to edit the information of a particular NPC
-
-- PUT: maybe. edit information, also by ID
-
-A sorting system, or filter, in the portfolio, either by name or city would be great.
+Creating folder system, send to, favourite and kill buttons. Edit the name of the created games. Filter system on portfolio.
 
 Creation of handouts:
 
 An export system? to generate a downloadable image (jpg, png) of a particular NPC. Ideally, the user should be able to choose the information they want to generate on the image.
 
-Creating new folders inside of the portfolio of characters and the ability to drag or send npcs inside of it.
+PALETTE IM USING
+https://coolors.co/212529-fa6b6b-cfcabf-4b477c-798478

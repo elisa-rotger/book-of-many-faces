@@ -100,7 +100,7 @@ export default function App() {
 
   return (
     <div>
-      <Navbar bg="dark" expand="lg" variant="dark">
+      <Navbar className="nav-bar" bg="dark" expand="lg" variant="dark">
         <Container>
           <Navbar.Brand onClick={handleHome}>
             <img 
