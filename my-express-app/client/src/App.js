@@ -98,6 +98,19 @@ export default function App() {
     .catch(error => { setError(error.message); console.log(error) })
   }
 
+  const addFolder = (npcID, folderID) => {
+    fetch(`/index/mvp/${npcID}`, {
+      method:"PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ folder_id: folderID })
+    })
+    .then(result => result.json())
+    .then(npcs => { setNPCS(npcs) })
+    .catch(error => { setError(error.message); console.log(error) })
+  }
+
   return (
     <div>
       <Navbar className="nav-bar" bg="dark" expand="lg" variant="dark">
@@ -132,7 +145,7 @@ export default function App() {
           : <div>
             <div className="port-content">
               <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
-              <Portfolio npcs={NPCS} currentGame={currentGame} onDelete={id => deleteNPC(id)} updateNPC={(updatedNPC) => updateNPC(updatedNPC)} />
+              <Portfolio npcs={NPCS} currentGame={currentGame} onDelete={id => deleteNPC(id)} updateNPC={(updatedNPC) => updateNPC(updatedNPC)} onFolder={(npcID, folderID) => addFolder(npcID, folderID)} />
             </div>
           </div>}
         </div>

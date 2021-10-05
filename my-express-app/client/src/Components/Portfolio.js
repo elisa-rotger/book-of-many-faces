@@ -63,6 +63,10 @@ export default function Portfolio(props) {
         props.onDelete(id);
     }
 
+    const addFolderID = (npcID, folderID) => {
+        props.onFolder(npcID, folderID);
+    }
+
     const openPopup = (id) => {
         setIsOpen(true);
         const index = props.npcs.findIndex(n => n.id == id)
@@ -111,7 +115,7 @@ export default function Portfolio(props) {
                                     </button>
                                     <div className="dropdown-content" id="send-content">
                                         {folders && folders.map((f) => (
-                                            <a className="dropdown-item" key={f.id}>{f.folder}</a>
+                                            <a className="dropdown-item" key={f.id} onClick={() => addFolderID(n.id, f.id)}>{f.folder}</a>
                                         ))}
                                     </div>
                                 </a>
