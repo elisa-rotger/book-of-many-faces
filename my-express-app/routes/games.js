@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 const db = require("../model/helper");
 
-/* GET users listing. */
+/* GET games listing. */
 router.get('/', function(req, res, next) {
-    res.send('Please');
-  });
+    res.send('GAMES');
+});
 
 function getGames(req, res) {
 db(`SELECT * FROM games ORDER BY id ASC;`)

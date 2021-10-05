@@ -1,9 +1,16 @@
 DROP TABLE IF EXISTS npcs; 
 DROP TABLE IF EXISTS games;
+DROP TABLE IF EXISTS folders;
 
 CREATE TABLE games (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     game VARCHAR(50)
+);
+
+CREATE TABLE folders (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    folder VARCHAR(30),
+    image VARCHAR(200)
 );
  
 CREATE TABLE npcs ( 
@@ -19,7 +26,9 @@ CREATE TABLE npcs (
     notes VARCHAR(200),
     image VARCHAR(200),
     game_id INT NOT NULL,
-    FOREIGN KEY (game_id) references games(id) ON DELETE CASCADE
+    folder_id INT,
+    FOREIGN KEY (game_id) references games(id) ON DELETE CASCADE,
+    FOREIGN KEY (folder_id) references folders(id) ON DELETE CASCADE
 ); 
 
 INSERT INTO games (game) VALUES ('Tanaia');
