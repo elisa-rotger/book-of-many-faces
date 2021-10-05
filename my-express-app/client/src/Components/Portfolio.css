@@ -1,8 +1,12 @@
+/* Main content */
+
 .wrap {
     position: relative;
     padding: 20px;
     background-color: #cfcabf;
 }
+
+/* Search bar & Creating folders */
 
 .search-bar{
     display: fleX;
@@ -31,14 +35,14 @@
     width: 20%;
 }
 
+/* Flexbox containing the portfolio list */
+
 .tab-content {
     position: relative;
     display: block;
     overflow-wrap: break-word;
     padding: 20px;
 }
-
-/* Flexbox containing the portfolio list */
 
 .tiles {
     display: flex;
@@ -48,7 +52,7 @@
     padding: 0;
 }
 
-/* size & position of every tile */
+/* Size & Position of every tile */
 
 .tiles li.mod-tile {
     width: 20%;
@@ -66,7 +70,7 @@
     position: relative;
 }
 
-/* dropdown menu */
+/* Dropdown menu */
 
 #droptile {
     width: 2em;
@@ -85,6 +89,14 @@
 #tile-btn:hover {
     background-color: rgb(39, 36, 36);
 }
+
+#delete-btn {
+    color: red;
+}
+
+#delete-btn:hover {
+    color: white;
+}
     
 /* image adjusting */
 
@@ -100,11 +112,6 @@
     box-sizing: border-box;
     border-radius: 5px;
 }
-
-/* .mod-image:hover {
-    width: 105%;
-    height: 85%;
-} */
 
 img {
     width: 100%;
@@ -127,4 +134,17 @@ img {
 
 .tile-content p {
     height: 100%;
+}
+
+/* Send to... DROPDOWN */
+
+#send-content {
+    display: none;
+    background-color: grey;
+}
+
+#send-drop:hover #send-content {
+    display: inline-block;
+    margin-left: 1.2em;
+    padding: 1px;
 }
