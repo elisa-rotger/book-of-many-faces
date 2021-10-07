@@ -5,14 +5,12 @@ import EditForm from "./EditForm.js";
 
 const PopUp = (props) => {
     const [edit, setEdit] = useState(false);
-    // const [updated, setUpdated] = useState(null);
 
     const handleEdit = () => {
         setEdit(!edit);
     }
 
     const updateNPC = (updatedNPC) => {
-        // setUpdated(updatedNPC);
         props.updateNPC(updatedNPC);
     }
 

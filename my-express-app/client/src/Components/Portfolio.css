@@ -35,6 +35,23 @@
     width: 20%;
 }
 
+/* Back to portfolio button */
+
+.back-btn {
+    display: flex;
+}
+
+.back-btn button{
+    margin: 0.5em;
+    border: 1px solid black;
+    display: flex;
+    gap: 2px;
+}
+
+.back-btn button:hover {
+    background-color:#4b477c;
+}
+
 /* Flexbox containing the portfolio list */
 
 .tab-content {

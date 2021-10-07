@@ -8,6 +8,7 @@ export default function Portfolio(props) {
     const [featured, setFeatured] = useState(null);
     const [folders, setFolders] = useState([]);
     const [folder, setFolder] = useState("");
+    const [currentFolder, setCurrentFolder] = useState(null);
 
     useEffect(() => {
         fetch("/folders/mvp")
@@ -99,9 +100,22 @@ export default function Portfolio(props) {
         </div>
 
         <div className="tab-content">
+            {currentFolder ?
+            <div>
+                <div className="back-btn">
+                    <button type="button" className="btn" onClick={() => setCurrentFolder(null)}>
+                        <i class="gg-arrow-left"></i>
+                        go back
+                    </button>
+                </div>
+                <div>
+                    <h4>{folders[folders.findIndex(f => f.id === currentFolder)].folder}</h4>
+                </div>
+            </div>
+            : <div></div>}
             <ul className="tiles">
                 {props.npcs &&
-                filteredNPCS.filter(n => n.game_id === props.currentGame).map(n => (
+                filteredNPCS.filter(n => n.game_id === props.currentGame).filter(n => n.folder_id === currentFolder).map(n => (
                     <li key={n.id} className="mod-tile">
                         <div className="dropdown" id="droptile">
                             <button className="dropbtn" type="button" id="tile-btn"> + </button>
@@ -117,6 +131,9 @@ export default function Portfolio(props) {
                                         {folders && folders.map((f) => (
                                             <a className="dropdown-item" key={f.id} onClick={() => addFolderID(n.id, f.id)}>{f.folder}</a>
                                         ))}
+                                        {currentFolder ? 
+                                        <a className="dropdown-item" onClick={() => addFolderID(n.id, null)}>Portfolio</a>
+                                    : <div></div>}
                                     </div>
                                 </a>
                                 <a className="dropdown-item btn-outline-danger" id="delete-btn" onClick={() => handleDelete(n.id)}>Delete</a>
@@ -130,11 +147,11 @@ export default function Portfolio(props) {
                         </div>
                     </li>
                 ))}
-                {folders && 
+                {folders &&  !currentFolder &&
                 folders.map(f => (
                     <li key={f.id} className="mod-tile">
                         <div className="mod-image">
-                            <img src={f.image} alt="new folder"/>
+                            <img src={f.image} alt="new folder" onClick={() => setCurrentFolder(f.id)}/>
                         </div>
                         {f.folder === "folder" ? 
                         <div className="tile-content">
