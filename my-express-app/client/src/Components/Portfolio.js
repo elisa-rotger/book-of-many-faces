@@ -8,14 +8,14 @@ export default function Portfolio(props) {
     const [featured, setFeatured] = useState(null);
     const [folders, setFolders] = useState([]);
     const [folder, setFolder] = useState("");
-    const [currentFolder, setCurrentFolder] = useState(null);
+    const [currentFolder, setCurrentFolder] = useState(1);
 
     useEffect(() => {
         fetch("/folders/mvp")
         .then(result => result.json())
         .then(folders => { setFolders(folders) })
         .catch(error => { console.log(error) })
-    }, [folders]);
+    }, [folder]);
 
     const filterNPCS = (npcs, search) => {
         if(!search) { return npcs }
@@ -58,6 +58,7 @@ export default function Portfolio(props) {
         .then(result => result.json())
         .then(folders => { setFolders(folders) })
         .catch(error => { console.log(error) })
+        setFolder("")
     }
 
     const handleDelete = (id) => {
@@ -70,7 +71,7 @@ export default function Portfolio(props) {
 
     const openPopup = (id) => {
         setIsOpen(true);
-        const index = props.npcs.findIndex(n => n.id == id)
+        const index = props.npcs.findIndex(n => n.id === id)
         setFeatured(props.npcs[index]);
     }
 
@@ -100,16 +101,16 @@ export default function Portfolio(props) {
         </div>
 
         <div className="tab-content">
-            {currentFolder ?
+            {currentFolder !== 1 ?
             <div>
                 <div className="back-btn">
-                    <button type="button" className="btn" onClick={() => setCurrentFolder(null)}>
+                    <button type="button" className="btn" onClick={() => setCurrentFolder(1)}>
                         <i class="gg-arrow-left"></i>
                         go back
                     </button>
                 </div>
                 <div>
-                    <h4>{folders[folders.findIndex(f => f.id === currentFolder)].folder}</h4>
+                    <h4>{folders[folders.findIndex(f => f.id == currentFolder)].folder}</h4>
                 </div>
             </div>
             : <div></div>}
@@ -128,11 +129,11 @@ export default function Portfolio(props) {
                                     Send to...
                                     </button>
                                     <div className="dropdown-content" id="send-content">
-                                        {folders && folders.map((f) => (
+                                        {folders && folders.filter(f => f.id !== 1).map((f) => (
                                             <a className="dropdown-item" key={f.id} onClick={() => addFolderID(n.id, f.id)}>{f.folder}</a>
                                         ))}
-                                        {currentFolder ? 
-                                        <a className="dropdown-item" onClick={() => addFolderID(n.id, null)}>Portfolio</a>
+                                        {currentFolder !== 1 ? 
+                                        <a className="dropdown-item" onClick={() => addFolderID(n.id, 1)}>Portfolio</a>
                                     : <div></div>}
                                     </div>
                                 </a>
@@ -147,23 +148,26 @@ export default function Portfolio(props) {
                         </div>
                     </li>
                 ))}
-                {folders &&  !currentFolder &&
-                folders.map(f => (
+                {currentFolder === 1 &&
+                folders.filter(f => f.id !== 1).map(f => (
                     <li key={f.id} className="mod-tile">
                         <div className="mod-image">
                             <img src={f.image} alt="new folder" onClick={() => setCurrentFolder(f.id)}/>
                         </div>
                         {f.folder === "folder" ? 
                         <div className="tile-content">
-                            <form>
+                            <form className="input-content">
                                 <input 
                                 type="text" 
                                 placeholder="new folder"
                                 name="folder"
                                 value={folder}
-                                onChange={e => setFolder(e.target.value)} 
+                                onChange={e => setFolder(e.target.value)}
+                                id="folder-input" 
                                 />
-                                <button type="button" onClick={() => updateFolder(folder, f.id)}>update</button>
+                                <button type="button" onClick={() => updateFolder(folder, f.id)}>
+                                    <i class="gg-check"></i>
+                                </button>
                             </form>
                         </div>
                         : 

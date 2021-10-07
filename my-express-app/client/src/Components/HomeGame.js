@@ -24,8 +24,18 @@ export default function HomeGame(props) {
 
     return (
         <div className="home-box">
-            <div className="games-title">            
-                <h3>Choose your game</h3>
+            <div className="games-title"> 
+                <img 
+                id="title-logo"
+                src="https://cdn4.iconfinder.com/data/icons/video-game-items-concepts/128/swords-crossed-dice-512.png"
+                alt="d20 crossed with swords logo"
+                />           
+                <h3>choose your game</h3>
+                <img 
+                id="title-logo"
+                src="https://cdn4.iconfinder.com/data/icons/video-game-items-concepts/128/swords-crossed-dice-512.png"
+                alt="d20 crossed with swords logo"
+                />  
             </div>
             <div className="container" id="game-grid">
                 {props.games.map((g) => (

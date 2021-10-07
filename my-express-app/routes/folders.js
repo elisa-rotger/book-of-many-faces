@@ -34,7 +34,7 @@ router.post("/mvp", async (req, res) => {
 
 router.put("/mvp/:id", async (req, res) => {
     await db(`UPDATE folders SET folder = '${req.body.folder}' WHERE id = ${req.params.id}`);
-    getFolders();
+    getFolders(req, res);
 })
 
 router.delete("/mvp/:id", async (req, res) => {

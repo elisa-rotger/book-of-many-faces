@@ -99,7 +99,8 @@ export default function App() {
   }
 
   const addFolder = (npcID, folderID) => {
-    fetch(`/index/mvp/${npcID}`, {
+    console.log(folderID)
+    fetch(`/fold/mvp/${npcID}`, {
       method:"PUT",
       headers: {
         "Content-Type": "application/json"

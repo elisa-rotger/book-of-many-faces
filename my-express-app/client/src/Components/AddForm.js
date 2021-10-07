@@ -15,7 +15,8 @@ export default function AddForm(props) {
         description: "",
         notes: "",
         image: "",
-        game_id: `${props.currentGame}`
+        game_id: `${props.currentGame}`,
+        folder_id: 1
     }
 
     //setter for individual npcs
@@ -42,7 +43,13 @@ export default function AddForm(props) {
         <Accordion flush className="accordion">
             <Accordion.Item eventKey="0">
                 <Accordion.Header>
-                    <span>create new NPC</span>
+                    <span>create new NPC!
+                        {/* <img 
+                        id="addnpc-logo"
+                        src="https://image.flaticon.com/icons/png/512/1620/1620493.png"
+                        alt=""
+                        /> */}
+                    </span>
                 </Accordion.Header>
                 <Accordion.Body>
                     <form>
@@ -55,28 +62,30 @@ export default function AddForm(props) {
                                     value={npc.firstname} 
                                     onChange={handleChange}/>
                                 </label> <br /><br />
-                                <label> age <br />
-                                    <input 
-                                    type="text"
-                                    name="age"
-                                    value={npc.age}
-                                    onChange={handleChange}/>
-                                </label>
-                            </div>
-                            <div className="item">
                                 <label> last name <br />
                                     <input 
                                     type ="text"
                                     name="lastname"
                                     value={npc.lastname}
                                     onChange={handleChange}/>
-                                </label> <br /><br />
+                                </label> 
+                            </div>
+                            <div className="item">
+                            <label> age <br />
+                                    <input 
+                                    type="text"
+                                    name="age"
+                                    value={npc.age}
+                                    onChange={handleChange}
+                                    id="age"/>
+                                </label><br /><br />
                                 <label> race <br />
                                     <input 
                                     type ="text"
                                     name="race"
                                     value={npc.race}
-                                    onChange={handleChange}/>
+                                    onChange={handleChange}
+                                    id="race"/>
                                 </label>
                             </div>
                             <label className="item" id="description">description <br />
@@ -91,7 +100,8 @@ export default function AddForm(props) {
                                     type ="text"
                                     name="class"
                                     value={npc.class}
-                                    onChange={handleChange}/>
+                                    onChange={handleChange}
+                                    id="class" />
                                 </label><br /><br />
                                 <label> residence <br />
                                     <input 
@@ -125,7 +135,7 @@ export default function AddForm(props) {
                                 onChange={handleChange}/>
                             </label>
                         </div>
-                        <button type="button" onClick={handleSubmit}>create npc</button>
+                        <button type="button" className="btn" onClick={handleSubmit} id="npc-btn">create npc</button>
                     </form>
                 </Accordion.Body>
             </Accordion.Item>

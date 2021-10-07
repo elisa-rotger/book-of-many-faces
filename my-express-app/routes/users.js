@@ -40,7 +40,8 @@ router.post("/mvp/", async (req, res) => {
     description, 
     notes,
     image,
-    game_id
+    game_id,
+    folder_id
     )  
   VALUES (
     '${req.body.firstname}',
@@ -53,7 +54,8 @@ router.post("/mvp/", async (req, res) => {
     '${req.body.description}',
     '${req.body.notes}',
     '${req.body.image}',
-    '${req.body.game_id}'
+    '${req.body.game_id}',
+    '${req.body.folder_id}'
   )`);
   getNPCs(req, res);
 })

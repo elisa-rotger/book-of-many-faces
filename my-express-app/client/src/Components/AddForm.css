@@ -18,10 +18,21 @@
 
 .item {
     align-self: center;
+    font-weight: bold;
+    text-align: left;
 }
 
 input {
     width: 100%;
+
+}
+
+#age {
+    width: 30%;
+}
+
+#race, #class {
+    width: 80%;
 }
 
 textarea {
@@ -37,6 +48,11 @@ textarea {
     grid-column: 3 / span 2;
 }
 
-form button {
-    margin: 2%;
+#npc-btn {
+    border: 1px solid black;
+    margin-top: 3em;
+}
+
+#npc-btn:hover {
+    background-color: #696597;
 }

@@ -137,7 +137,12 @@ img {
     cursor: pointer;
 }
 
-/* content adjusting */
+.mod-image:hover {
+    width: 105%;
+    height: 85%;
+}
+
+/* Content adjusting */
 
 .tile-content {
     float: center;
@@ -153,7 +158,24 @@ img {
     height: 100%;
 }
 
-/* Send to... DROPDOWN */
+.input-content {
+    display: flex;
+}
+
+#folder-input {
+    width: 100%;
+}
+
+.input-content button {
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.input-content button:hover {
+    background-color: #696597;
+}
+
+/* Send to... dropdown */
 
 #send-content {
     display: none;
