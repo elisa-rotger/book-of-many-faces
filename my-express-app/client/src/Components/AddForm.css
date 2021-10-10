@@ -30,7 +30,6 @@
 
 input {
     width: 100%;
-
 }
 
 #age {
@@ -57,6 +56,12 @@ textarea {
 #npc-btn {
     border: 1px solid black;
     margin-top: 3em;
+    width: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-left: 28em;
 }
 
 #npc-btn:hover {

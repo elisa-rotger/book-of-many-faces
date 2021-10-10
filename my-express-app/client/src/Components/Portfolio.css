@@ -52,6 +52,21 @@
     background-color:#4b477c;
 }
 
+/* Title of Game && Folder */
+
+.fold-title h4 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.fold-title {
+ background: rgb(207,202,191);
+background: linear-gradient(90deg, rgba(207,202,191,1) 0%, rgba(157,141,241,1) 55%, rgba(207,202,191,1) 100%); 
+    padding: 1.5em 0;
+    margin-bottom: 2em;
+}
+
+
 /* Flexbox containing the portfolio list */
 
 .tab-content {

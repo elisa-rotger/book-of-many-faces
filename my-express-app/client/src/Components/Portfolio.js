@@ -109,11 +109,13 @@ export default function Portfolio(props) {
                         go back
                     </button>
                 </div>
-                <div>
-                    <h4>{folders[folders.findIndex(f => f.id == currentFolder)].folder}</h4>
+                <div className="fold-title">
+                    <h4>{folders[folders.findIndex(f => f.id == currentFolder)].folder.toUpperCase()}</h4>
                 </div>
             </div>
-            : <div></div>}
+            : <div className="fold-title">
+                <h4>{props.games[props.games.findIndex(g => g.id === props.currentGame)].game.toUpperCase()}</h4>    
+            </div>}
             <ul className="tiles">
                 {props.npcs &&
                 filteredNPCS.filter(n => n.game_id === props.currentGame).filter(n => n.folder_id === currentFolder).map(n => (

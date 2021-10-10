@@ -146,7 +146,7 @@ export default function App() {
           : <div>
             <div className="port-content">
               <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>
-              <Portfolio npcs={NPCS} currentGame={currentGame} onDelete={id => deleteNPC(id)} updateNPC={(updatedNPC) => updateNPC(updatedNPC)} onFolder={(npcID, folderID) => addFolder(npcID, folderID)} />
+              <Portfolio npcs={NPCS} games={games} currentGame={currentGame} onDelete={id => deleteNPC(id)} updateNPC={(updatedNPC) => updateNPC(updatedNPC)} onFolder={(npcID, folderID) => addFolder(npcID, folderID)} />
             </div>
           </div>}
         </div>
