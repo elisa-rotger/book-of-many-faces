@@ -23,7 +23,7 @@ CREATE TABLE npcs (
     gender VARCHAR(20),
     residence VARCHAR(20),
     description VARCHAR(500),
-    notes VARCHAR(200),
+    notes VARCHAR(500),
     image VARCHAR(200),
     game_id INT NOT NULL,
     folder_id INT,

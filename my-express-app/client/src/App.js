@@ -51,6 +51,9 @@ export default function App() {
   }
 
   const addNpc = (newNpc) => {
+    newNpc.description = newNpc.description.replace(/'/g, "\\'");
+    newNpc.notes = newNpc.notes.replace(/'/g, "\\'");
+    console.log(newNpc);
     fetch("/users/mvp", {
       method: "POST",
       headers: {
@@ -86,6 +89,8 @@ export default function App() {
   }
 
   const updateNPC = (updatedNPC) => {
+    updatedNPC.description = updatedNPC.description.replace(/'/g, "\\'");
+    updatedNPC.notes = updatedNPC.notes.replace(/'/g, "\\'");
     fetch(`/users/mvp/${updatedNPC.id}`, {
       method: "PUT",
       headers: {
