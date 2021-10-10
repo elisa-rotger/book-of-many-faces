@@ -114,6 +114,10 @@
 #delete-btn:hover {
     color: white;
 }
+
+#hiding {
+    display: none;
+}
     
 /* image adjusting */
 
@@ -137,9 +141,10 @@ img {
     cursor: pointer;
 }
 
-.mod-image:hover {
-    width: 105%;
-    height: 85%;
+#star-icon, #kill-icon {
+    width: 1em;
+    height: 1em;
+    margin: 0 0 2px 2px;
 }
 
 /* Content adjusting */

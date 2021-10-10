@@ -122,8 +122,20 @@ export default function Portfolio(props) {
                             <button className="dropbtn" type="button" id="tile-btn"> + </button>
                             <div className="dropdown-content" id="drop-content">
                                 {/* TODO */}
-                                <a className="dropdown-item">Favourite</a>
-                                <a className="dropdown-item">Kill</a>
+                                <a className="dropdown-item" id="fave">Favourite
+                                    <img 
+                                    id="star-icon"
+                                    src="https://2.bp.blogspot.com/-hsuemZmkYBo/WJibJn2XtFI/AAAAAAAAAEc/zNVuRLIoq4o_WV6QMMOqx-gOfmbsFXYJgCLcB/s1600/star-icon.png"
+                                    alt="icon of a yellow star"
+                                    />
+                                </a>
+                                <a className="dropdown-item" id="kill">Kill
+                                    <img 
+                                    id="kill-icon"
+                                    src="https://cdn3.iconfinder.com/data/icons/video-game-items-concepts/128/skull-2-512.png"
+                                    alt="icon of a skull"
+                                    />
+                                </a>
                                 <a className="dropdown-item dropdown" id="send-drop">
                                     <button type="button" className="btn">
                                     Send to...
@@ -134,7 +146,7 @@ export default function Portfolio(props) {
                                         ))}
                                         {currentFolder !== 1 ? 
                                         <a className="dropdown-item" onClick={() => addFolderID(n.id, 1)}>Portfolio</a>
-                                    : <div></div>}
+                                    : <div id="hiding"></div>}
                                     </div>
                                 </a>
                                 <a className="dropdown-item btn-outline-danger" id="delete-btn" onClick={() => handleDelete(n.id)}>Delete</a>

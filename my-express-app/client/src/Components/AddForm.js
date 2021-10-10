@@ -43,12 +43,12 @@ export default function AddForm(props) {
         <Accordion flush className="accordion">
             <Accordion.Item eventKey="0">
                 <Accordion.Header>
-                    <span>create new NPC!
-                        {/* <img 
+                    <span>
+                        <img 
                         id="addnpc-logo"
                         src="https://image.flaticon.com/icons/png/512/1620/1620493.png"
-                        alt=""
-                        /> */}
+                        alt="npc logo"
+                        />create new NPC!
                     </span>
                 </Accordion.Header>
                 <Accordion.Body>

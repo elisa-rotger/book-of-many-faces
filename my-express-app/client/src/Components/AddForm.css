@@ -4,6 +4,12 @@
     font-weight: bold;
 }
 
+#addnpc-logo {
+    width: 3em;
+    height: 3em;
+    margin: 0 1em 0 2em;
+}
+
 #npc-form {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
