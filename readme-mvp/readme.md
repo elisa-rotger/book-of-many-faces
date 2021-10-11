@@ -15,7 +15,7 @@ The default campaign page should be like a portfolio grid showing the images and
 
 At the top, there should be a button that toggles the showing of the form, on top of the first images of the grid, with the inputs necessary to create a new NPC.
 
-Over the portfolio, there should be a search bar (filters by name), a create new folder function and a filter function.
+Over the portfolio, there should be a search bar (filters by name) and a create new folder function.
 
 When clicking on an NPC, it should show & toggle their full information on a popup window. In this window, there should be an EDIT button/function.
 
@@ -41,18 +41,17 @@ Every NPC should have the following information:
 
 ### Calls to API needed
 
-- GET: both (npcs and games) general & by ID
-- POST: adding NPC to npcs table, adding GAME to games table
-- DELETE: deleting an NPC by ID, deleting GAME by ID (also cascading and deleting NPCS    with their gameID)
-- PUT: edit NPC by ID, edit GAME by ID
+- GET: both (npcs, games and folders) general & by ID
+- POST: adding NPC to npcs table, adding GAME to games table, adding FOLDER to folders table
+- DELETE: deleting an NPC by ID, deleting GAME by ID (also cascading and deleting NPCS and FOLDERS with their gameID), deleting FOLDER by ID (cascading and deleting the NPCS with their folderID)
+- PUT: edit NPC by ID, edit GAME by ID, edit FOLDER by ID
 
 ### TODO features
 
-Creating folder system, send to, favourite and kill buttons. Edit the name of the created games. Filter system on portfolio.
+Favourite and kill buttons. Edit the name of the created games, edit the name of the folders. Delete a folder. Filter system on portfolio.
 
 Creation of handouts:
 
 An export system? to generate a downloadable image (jpg, png) of a particular NPC. Ideally, the user should be able to choose the information they want to generate on the image.
 
-PALETTE IM USING
-https://coolors.co/212529-fa6b6b-cfcabf-4b477c-798478
+Honestly, this is a wild thing I have no idea how or if it can be done. No pressure.

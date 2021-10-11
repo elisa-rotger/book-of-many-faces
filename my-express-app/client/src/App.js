@@ -119,6 +119,7 @@ export default function App() {
 
   return (
     <div>
+      {/* NAVIGATION BAR W HOME BUTTON */}
       <Navbar className="nav-bar" bg="dark" expand="lg" variant="dark">
         <Container>
           <Navbar.Brand onClick={handleHome}>
@@ -144,7 +145,11 @@ export default function App() {
             <h1>BOOK OF</h1><div className="title-gap"></div> <h1 className="special-title">MANY FACES</h1>
           </div>
         </div>
+
+        {/* ERROR DISPLAY */}
         <div>{error ? error : ""}</div>
+
+        {/* CONDITIONAL RENDERING OF EITHER HOME PAGE OR PORTFOLIO */}
         <div className="wrapper" id="second-content">
           {home && !currentGame
           ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)} onDelete={id => deleteGame(id)} /> 
@@ -155,8 +160,9 @@ export default function App() {
             </div>
           </div>}
         </div>
-
       </div>
+
+      {/* FOOTER */}
       <footer>
         <section className="content">
           <div className="logo">

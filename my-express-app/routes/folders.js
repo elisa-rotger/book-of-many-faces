@@ -28,7 +28,7 @@ db(`SELECT * FROM folders WHERE id = ${req.params.id}`)
 })
 
 router.post("/mvp", async (req, res) => {
-    await db(`INSERT INTO folders (folder, image) VALUES ('${req.body.folder}', '${req.body.image}')`);
+    await db(`INSERT INTO folders (folder, image, game_id) VALUES ('${req.body.folder}', '${req.body.image}', '${req.body.game_id}')`);
     getFolders(req, res);
 })
 
