@@ -15,12 +15,17 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/games', gamesRouter);
 app.use('/folders', foldersRouter);
-app.use('/fold', foldRouter)
+app.use('/fold', foldRouter);
+
+// Respond with index.html for unmatched routes
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build', 'index.html'));
+});
 
 module.exports = app;
