@@ -88,28 +88,46 @@ Same as the portfolio page, but with the specific characters you send to it.
 
 | Name | Data Type | Description |
 
+
 | id (primary key) | INT | 001 |
+
 | folder | VARCHAR(30) | name of the folder |
+
 | image | VARCHAR(200) | url - default picture of a folder |
+
 | game_id (foreign key) | INT | 001 |
 
 ### NPCs table
 
 | Name | Data Type | Description |
 
+
 | id (primary key) | INT | 001 |
+
 | firstname | VARCHAR(20) | first name of the caracter |
+
 | lastname | VARCHAR(20) | last name of the caracter |
-| age | INT | age of the character (TBD - make it a text so "immortal" or "unknown" can be added)
+
+| age | INT | age of the character (TBD - make it a text so "immortal" or "unknown" can be added) |
+
 | race | VARCHAR(20) | e.g. elf, goliath, faun, etc. |
+
 | class | VARCHAR(20) | e.g. paladin, cleric, investigator, etc. |
+
 | gender | VARCHAR(20) | selector - male, female, other |
+
 | residence | VARCHAR(20) | where they live - city, country, unknown |
+
 | description | VARCHAR(500) | phisical description and general attitude of character |
+
 | notes | VARCHAR(500) | GM notes about the character - accent, thoughts on player characters, motivations, etc. |
+
 | image | VARCHAR(500) | URL to set a profile picture (TBD - add a way to actually upload locally stored images) |
+
 | game_id (foreign key) | INT | 001 |
+
 | folder_id (foreign key) | INT | 001 |
+
 
 
 ## Routes
