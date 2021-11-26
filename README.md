@@ -1,4 +1,4 @@
-# CodeOp MVP individual project - Book of Many Faces
+# CodeOp MVP - Book of Many Faces
 
 ## Overview
 
