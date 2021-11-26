@@ -1,4 +1,3 @@
-import { TrashEmpty } from "css.gg";
 import React, { useEffect, useState } from "react";
 import PopUp from "./PopUp";
 import "./Portfolio.css";

@@ -1,59 +1,151 @@
-# bo-many-faces
+# CodeOp MVP individual project - Book of Many Faces
 
-# NPC index
+## Overview
 
-## Home page
+This portfolio is designed so tabletop roleplaying fans can create, customize, keep and organize all the different secondary characters that they create for their games.
 
-The user should be able to create a campaign where they will create and add custom NPCs.
+RPG home games can actually last for a very long time - I've been playing one for around 4 years. When they get to a point of being this long, the world you play in actually becomes extremely big and populated, and not only by your player characters.
 
-There should be buttons to access campaigns created and a form to a new campaign.
-Adding a new campaign should create a new table in the database, the name of the table should be the input from the form.
+In situations like this, it becomes exponentially difficult to keep track of all the voices in your head - and even for shorter, smaller games, this tool should help to keep a neat track of everything you need to know about them.
 
-Each game button should also have the EDIT and DELETE options.
+## Features
 
-## Game
+### Must have
 
-The default campaign page should be like a portfolio grid showing the images and names of previously created characters for that game.
+* Ability to create games and access them
+* Form to add new characters to a specific game
+* Portfolio main page displaying all the characters
+* Ability to edit and delete a character's information
+* Search bar in portfolio to look for a specific character
 
-At the top, there should be a button that toggles the showing of the form, on top of the first images of the grid, with the inputs necessary to create a new NPC.
+### Should have
 
-Over the portfolio, there should be a search bar (filters by name) and a create new folder function.
+* Authentication
+* Translation 
+* Description of images
 
-When clicking on an NPC, it should show & toggle their full information on a popup window. In this window, there should be an EDIT button/function.
+### Could have
 
-On every image, there should be various buttons for each npc: 
-- DELETE: remove that npc from database
-- FAVOURITE: marks that npc visually and moves it at the top of the page
-- KILL: marks that npc as dead (cross, red overlay, etc)
-- MOVE TO: move that npc to created folders
+* Ability to create folders inside of games and move characters inside them
+* Export function to create an easy handout for your players
+* Mark characters as favourites - move them to the top of the portfolio page
+* Mark characters as dead
+* TODO - Rewrite using React Router
 
-### Information on NPCs
+## Pages
 
-Every NPC should have the following information:
+### Home page
 
-- Image
-- First name, last name
-- Age
-- Race
-- Class
-- Gender
-- Residence
-- Description
-- Notes
+Landing page. Display of created games and form to add new ones (if authentication were implemented - login page).
 
-### Calls to API needed
+#### Features
 
-- GET: both (npcs, games and folders) general & by ID
-- POST: adding NPC to npcs table, adding GAME to games table, adding FOLDER to folders table
-- DELETE: deleting an NPC by ID, deleting GAME by ID (also cascading and deleting NPCS and FOLDERS with their gameID), deleting FOLDER by ID (cascading and deleting the NPCS with their folderID)
-- PUT: edit NPC by ID, edit GAME by ID, edit FOLDER by ID
+* Header with logo and home button
+* Display of created games
+* Input form to add new ones
+* Footer
 
-### TODO features
+### Portfolio page
 
-Favourite and kill buttons. Edit the name of the created games, edit the name of the folders. Delete a folder. Filter system on portfolio.
+Main page. Display of created characters in a grid like fashion. Clicking on them opens a pop up with their information and details.
 
-Creation of handouts:
+#### Features
 
-An export system? to generate a downloadable image (jpg, png) of a particular NPC. Ideally, the user should be able to choose the information they want to generate on the image.
+* Accordion with form to add new characters to the game - key details include:
+  * Name, surname
+  * City of residence
+  * Age, race and gender
+  * Description and GM notes
+  * Profile picture (url)
+* Display of character's profile pictures
+* Pop up for each of them, detailing their information
+* Edit form in the pop up
+* Search bar to look for a specific character
+* Add a new folder button - adds a placeholder folder with customisable name
+* Ability to delete and move a character to a specific folder
+* Ability to delete a folder and their characters in it (TBD)
+* Ability to generate a handout of a specific character, excluding GM notes (TBD)
 
-Honestly, this is a wild thing I have no idea how or if it can be done. No pressure.
+### Folder page
+
+Same as the portfolio page, but with the specific characters you send to it.
+
+* Display of characters, with added button to send them back to the portfolio
+* Button to go back to main portfolio
+
+## Wireframes TODO
+
+## Database
+
+### Games table
+
+| Name | Data Type | Description |
+
+| id (primary key) | INT | 001 |
+| game | VARCHAR(50) | name of the game |
+
+### Folders table
+
+| Name | Data Type | Description |
+
+| id (primary key) | INT | 001 |
+| folder | VARCHAR(30) | name of the folder |
+| image | VARCHAR(200) | url - default picture of a folder |
+| game_id (foreign key) | INT | 001 |
+
+### NPCs table
+
+| Name | Data Type | Description |
+
+| id (primary key) | INT | 001 |
+| firstname | VARCHAR(20) | first name of the caracter |
+| lastname | VARCHAR(20) | last name of the caracter |
+| age | INT | age of the character (TBD - make it a text so "immortal" or "unknown" can be added)
+| race | VARCHAR(20) | e.g. elf, goliath, faun, etc. |
+| class | VARCHAR(20) | e.g. paladin, cleric, investigator, etc. |
+| gender | VARCHAR(20) | selector - male, female, other |
+| residence | VARCHAR(20) | where they live - city, country, unknown |
+| description | VARCHAR(500) | phisical description and general attitude of character |
+| notes | VARCHAR(500) | GM notes about the character - accent, thoughts on player characters, motivations, etc. |
+| image | VARCHAR(500) | URL to set a profile picture (TBD - add a way to actually upload locally stored images) |
+| game_id (foreign key) | INT | 001 |
+| folder_id (foreign key) | INT | 001 |
+
+
+## Routes
+
+### Routes pointed to games table
+
+* Get all
+* Get all by user (TBD)
+* Post
+* Delete
+* Put (TBD - edit name of the game)
+
+### Routes pointed to npcs table
+
+* Get all by game_id
+* Get by id
+* Post
+* Delete
+* Put (edit character information)
+* Put (move to a folder - change folder_id)
+
+### Routes pointed to folders table
+
+* Get by game_id
+* Post
+* Put (customisable name)
+* Delete (TBD)
+
+## APIs and libraries
+
+React Bootstrap + Bootstrap
+
+TBD - React Router
+
+## Installation
+
+`npm install` and `yarn` should install everything needed
+
+The command `npm install react-bootstrap bootstrap` should install the appropriate package in case of difficulties 
