@@ -88,6 +88,19 @@ export default function App() {
     .catch(error => { setError(error.message); console.log(error) })
   }
 
+  const editGame = (updatedGame) => {
+    fetch(`/games/mvp/${updatedGame.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(updatedGame)
+    })
+    .then(result => result.json())
+    .then(games => {setGames(games)})
+    .catch(error => { setError(error.message); console.log(error) })
+  }
+
   const updateNPC = (updatedNPC) => {
     updatedNPC.description = updatedNPC.description.replace(/'/g, "\\'");
     updatedNPC.notes = updatedNPC.notes.replace(/'/g, "\\'");
@@ -152,7 +165,7 @@ export default function App() {
         {/* CONDITIONAL RENDERING OF EITHER HOME PAGE OR PORTFOLIO */}
         <div className="wrapper" id="second-content">
           {home && !currentGame
-          ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)} onDelete={id => deleteGame(id)} /> 
+          ? <HomeGame onSubmit={newGame => addGame(newGame)} games={games} onClick={id => setCurrentGame(id)} onDelete={id => deleteGame(id)} onEdit={updatedGame => editGame(updatedGame)}/> 
           : <div>
             <div className="port-content">
               <AddForm onSubmit={newNpc => addNpc(newNpc)} currentGame={currentGame}/>

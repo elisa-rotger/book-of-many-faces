@@ -18,10 +18,23 @@ export default function HomeGame(props) {
         setGame("");
     }
 
-    const handleEdit = (event) => {
+    const handleShow = (event) => {
         event.preventDefault();
         setShow(true);
-        setCurrentGame(event.target.id)
+        let index = props.games.findIndex(g => g.id == event.target.id)
+        setCurrentGame(props.games[index]);
+    }
+
+    const handleEdit = (event) => {    
+        setCurrentGame((state) => ({
+            ...state,
+            [event.target.name]: event.target.value
+        }))
+    }
+
+    const sendEdit = () => {
+        props.onEdit(currentGame);
+        setShow(false);
     }
 
     const handleClick = (id) => {
@@ -59,7 +72,7 @@ export default function HomeGame(props) {
                             </button>
                             <div className="dropdown-content">
                                 {/* TODO */}
-                                <a id={g.id} onClick={handleEdit}>edit</a>
+                                <a id={g.id} onClick={handleShow}>edit</a>
                                 <a className="btn btn-outline-danger" onClick={() => handleDelete(g.id)} >delete</a>
                             </div>
                         </div>
@@ -84,13 +97,20 @@ export default function HomeGame(props) {
                         <Modal.Title>Rename your game</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        {currentGame}
+                        <label>
+                            <input 
+                            type="text"
+                            name="game"
+                            value={currentGame.game}
+                            onChange={handleEdit}
+                            />
+                        </label>
                     </Modal.Body>
                     <Modal.Footer>
                     <Button variant="secondary" onClick={() => setShow(false)}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={() => setShow(false)}>
+                    <Button variant="primary" onClick={sendEdit}>
                         Save Changes
                     </Button>
                     </Modal.Footer>

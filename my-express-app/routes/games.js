@@ -37,4 +37,11 @@ await db(`DELETE FROM games WHERE id = ${req.params.id}`);
 getGames(req, res);
 })
 
+router.put("/mvp/:id", async (req, res) => {
+    await db(`UPDATE games SET 
+    game = '${req.body.game}'
+    WHERE id = ${req.params.id}`);
+    getGames(req, res);
+})
+
 module.exports = router;
