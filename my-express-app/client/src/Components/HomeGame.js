@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "./HomeGame.css";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 export default function HomeGame(props) {
     const [game, setGame] = useState("");
+    const [show, setShow] = useState(false);
+    const [currentGame, setCurrentGame] = useState();
 
     const handleChange = (event) => {
         setGame(event.target.value)
@@ -12,6 +16,12 @@ export default function HomeGame(props) {
         event.preventDefault();
         props.onSubmit(game);
         setGame("");
+    }
+
+    const handleEdit = (event) => {
+        event.preventDefault();
+        setShow(true);
+        setCurrentGame(event.target.id)
     }
 
     const handleClick = (id) => {
@@ -49,7 +59,7 @@ export default function HomeGame(props) {
                             </button>
                             <div className="dropdown-content">
                                 {/* TODO */}
-                                <a>edit</a>
+                                <a id={g.id} onClick={handleEdit}>edit</a>
                                 <a className="btn btn-outline-danger" onClick={() => handleDelete(g.id)} >delete</a>
                             </div>
                         </div>
@@ -68,6 +78,23 @@ export default function HomeGame(props) {
                 <i class="gg-add-r"></i>
             </button>
             </form>
+
+            <Modal centered show={show} onHide={() => setShow(false)}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Rename your game</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        {currentGame}
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShow(false)}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={() => setShow(false)}>
+                        Save Changes
+                    </Button>
+                    </Modal.Footer>
+            </Modal>
         </div>
     )
 }
