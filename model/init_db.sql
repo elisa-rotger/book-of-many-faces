@@ -12,7 +12,6 @@ CREATE TABLE folders (
     folder VARCHAR(30),
     image VARCHAR(200),
     game_id INT NOT NULL,
-    FOREIGN KEY (game_id) references games(id) ON DELETE CASCADE
 );
  
 CREATE TABLE npcs ( 
