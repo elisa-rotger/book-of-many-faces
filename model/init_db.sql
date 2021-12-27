@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS games;
 
 CREATE TABLE games (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    game VARCHAR(50)
+    game VARCHAR(50),
 );
 
 CREATE TABLE folders (
