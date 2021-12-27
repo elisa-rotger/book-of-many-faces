@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 export default function HomeGame(props) {
     const [game, setGame] = useState("");
     const [show, setShow] = useState(false);
-    const [currentGame, setCurrentGame] = useState();
+    const [currentGame, setCurrentGame] = useState("");
 
     const handleChange = (event) => {
         setGame(event.target.value)
