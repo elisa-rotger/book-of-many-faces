@@ -2,33 +2,32 @@ DROP TABLE IF EXISTS npcs;
 DROP TABLE IF EXISTS folders;
 DROP TABLE IF EXISTS games;
 
-CREATE TABLE games (
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    game VARCHAR(50),
+CREATE TABLE `games` (
+    `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `game` VARCHAR(50)
 );
 
-CREATE TABLE folders (
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    folder VARCHAR(30),
-    image VARCHAR(200),
-    game_id INT NOT NULL,
+CREATE TABLE `folders` (
+    `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `folder` VARCHAR(30),
+    `image` VARCHAR(200),
+    `game_id` INT
 );
  
-CREATE TABLE npcs ( 
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
-    firstname VARCHAR(20), 
-    lastname VARCHAR(20),
-    age INT,
-    race VARCHAR(20),
-    class VARCHAR(20),
-    gender VARCHAR(20),
-    residence VARCHAR(20),
-    description VARCHAR(500),
-    notes VARCHAR(500),
-    image VARCHAR(200),
-    game_id INT NOT NULL,
-    folder_id INT,
-    FOREIGN KEY (game_id) references games(id) ON DELETE CASCADE,
+CREATE TABLE `npcs` ( 
+    `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    `firstname` VARCHAR(20), 
+    `lastname` VARCHAR(20),
+    `age` INT,
+    `race` VARCHAR(20),
+    `class` VARCHAR(20),
+    `gender` VARCHAR(20),
+    `residence` VARCHAR(20),
+    `description` VARCHAR(500),
+    `notes` VARCHAR(500),
+    `image` VARCHAR(200),
+    `game_id` INT NOT NULL,
+    `folder_id` INT
 ); 
 
 INSERT INTO games (game) VALUES ('Tanaia');
