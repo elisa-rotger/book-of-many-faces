@@ -67,12 +67,23 @@ export default function Portfolio(props) {
         setFolder("")
     }
 
+    const addFolderID = (npcID, folderID) => {
+        props.onFolder(npcID, folderID);
+    }
+
+    // DELETE CHARACTER
     const handleDelete = (id) => {
         props.onDelete(id);
     }
 
-    const addFolderID = (npcID, folderID) => {
-        props.onFolder(npcID, folderID);
+    // DELETE FOLDER
+    const folderDelete = (id) => {
+        fetch(`/folders/mvp/${id}`, {
+            method: "DELETE"
+        })
+        .then(result => result.json())
+        .then(folders => setFolders(folders))
+        .catch(error => { console.log(error) })
     }
 
     // OPENS A POPUP FOR THE SELECTED CHARACTER - IT NEEDS TO FIND ITS INDEX IN THE ARRAY
@@ -180,6 +191,11 @@ export default function Portfolio(props) {
                 {currentFolder === 1 &&
                 folders.filter(f => f.id !== 1).filter(f => f.game_id === props.currentGame).map(f => (
                     <li key={f.id} className="mod-tile">
+                        <div className="dropdown" id="droptile-2">
+                            <button className="dropbtn" type="button" id="tile-btn-2" onClick={() => folderDelete(f.id)}>
+                                <img src="https://maxcdn.icons8.com/Share/icon/p1em/Editing/trash11600.png" />
+                            </button>
+                        </div>
                         <div className="mod-image">
                             <img src={f.image} alt="new folder" onClick={() => setCurrentFolder(f.id)}/>
                         </div>

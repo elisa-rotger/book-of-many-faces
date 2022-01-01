@@ -21,7 +21,6 @@ const PopUp = (props) => {
                 <span className="close-icon" onClick={props.handleClose}>x</span>
                 <div className="box-content">
                     <img src={props.npc.image} />
-                    {/* TODO */}
                     {edit 
                     ? <EditForm npc={props.npc} onSubmit={(updatedNPC) => updateNPC(updatedNPC)} closeEdit={handleEdit}/>
                     : 

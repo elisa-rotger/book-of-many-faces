@@ -71,7 +71,6 @@ export default function HomeGame(props) {
                                 <i className="gg-menu"></i>
                             </button>
                             <div className="dropdown-content">
-                                {/* TODO */}
                                 <a id={g.id} onClick={handleShow}>edit</a>
                                 <a className="btn btn-outline-danger" onClick={() => handleDelete(g.id)} >delete</a>
                             </div>

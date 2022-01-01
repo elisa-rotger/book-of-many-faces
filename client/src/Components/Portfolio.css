@@ -106,13 +106,23 @@ background: linear-gradient(90deg, rgba(207,202,191,1) 0%, rgba(157,141,241,1) 5
 
 #droptile {
     width: 2em;
+    height: 2em;
     position: absolute;
     top: 1em;
     left: 1em;
     z-index: 10;
 }
 
-#tile-btn {
+#droptile-2 {
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 10;
+}
+
+.dropbtn {
     border: none;
     border-radius: 5px;
     opacity: 0.5;
@@ -120,6 +130,10 @@ background: linear-gradient(90deg, rgba(207,202,191,1) 0%, rgba(157,141,241,1) 5
 
 #tile-btn:hover {
     background-color: rgb(39, 36, 36);
+}
+
+#tile-btn-2:hover {
+    background-color: rgba(243, 19, 19, 0.781);
 }
 
 #delete-btn {
